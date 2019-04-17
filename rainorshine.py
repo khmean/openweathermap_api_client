@@ -33,7 +33,7 @@ def fetch_weather(s):
     # only with a successful connection with code 200 process the weather information
     if current_temperature.status_code == 200:
         d = current_temperature.json()
-        print(request_url)
+        print("Request URL:", request_url)
 
         # generate the url to get the uv index information from openweather
         uv_index_url = UV_URL + "?lat={}&lon={}&APIKEY={}".format(d["coord"]["lat"], d["coord"]["lon"], API_KEY)
